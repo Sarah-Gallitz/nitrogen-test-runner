@@ -3,6 +3,7 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        mavenLocal()
     }
 }
 
@@ -18,3 +19,5 @@ rootProject.name = "Nitrogen Test Runner"
 
 include ':demo:app'
 include ':demo:uiTests'
+
+include ':nitrogen-plugin'

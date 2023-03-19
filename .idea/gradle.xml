@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/demo" />
             <option value="$PROJECT_DIR$/demo/app" />
             <option value="$PROJECT_DIR$/demo/uiTests" />
+            <option value="$PROJECT_DIR$/nitrogen-plugin" />
           </set>
         </option>
       </GradleProjectSettings>

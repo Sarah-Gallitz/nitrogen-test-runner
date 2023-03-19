@@ -1,6 +1,8 @@
 plugins {
     id("com.android.test")
     id("org.jetbrains.kotlin.android")
+
+    id("au.sgallitz.nitrogen")
 }
 
 android {
