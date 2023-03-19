@@ -15,6 +15,13 @@ android {
 
         versionCode = 1
         versionName = "1.0"
+
+
+        testOptions {
+            unitTests {
+                isIncludeAndroidResources = true
+            }
+        }
     }
 
     compileOptions {
@@ -32,6 +39,12 @@ android {
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.2"
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
     }
 }
 
