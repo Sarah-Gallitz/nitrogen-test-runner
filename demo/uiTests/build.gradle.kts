@@ -1,19 +1,10 @@
 plugins {
-    id("com.android.test")
-    id("org.jetbrains.kotlin.android")
-
     id("au.sgallitz.nitrogen")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    targetProjectPath = ":demo:app"
-
-    compileSdk = 33
-
     defaultConfig {
-        minSdk = 21
-        targetSdk = 33
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testApplicationId = "au.sgallitz.nitrogen.demo.uiTests"
     }

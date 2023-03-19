@@ -18,4 +18,6 @@ gradlePlugin {
 
 dependencies {
     implementation(gradleApi())
+
+    implementation("com.android.tools.build:gradle-api:7.4.2")
 }
