@@ -77,6 +77,8 @@ class NitrogenTestPlugin : Plugin<Project> {
                 defaultConfig {
                     minSdk = minSdk ?: androidConfig.defaultConfig.minSdk
                     targetSdk = targetSdk ?: androidConfig.defaultConfig.targetSdk
+
+                    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
 
                 namespace = namespace ?: androidConfig.namespace

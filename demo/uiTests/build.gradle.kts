@@ -5,7 +5,6 @@ plugins {
 
 android {
     defaultConfig {
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testApplicationId = "au.sgallitz.nitrogen.demo.uiTests"
     }
 }
@@ -21,4 +20,6 @@ dependencies {
 
     implementation(platform("androidx.compose:compose-bom:2023.01.00"))
     implementation("androidx.compose.ui:ui-test-junit4")
+
+    implementation(project(":nitrogen"))
 }
