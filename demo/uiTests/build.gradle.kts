@@ -1,5 +1,5 @@
 plugins {
-    id("au.sgallitz.nitrogen")
+    id("au.sgallitz.nitrogen-plugin")
     id("org.jetbrains.kotlin.android")
 }
 
