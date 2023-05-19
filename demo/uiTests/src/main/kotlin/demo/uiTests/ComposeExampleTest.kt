@@ -1,15 +1,15 @@
-package au.sgallitz.nitrogen.demo.uiTests
+package demo.uiTests
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
-import au.sgallitz.nitrogen.demo.MainActivity
-import au.sgallitz.nitrogen.environment.skipOnDevice
-import au.sgallitz.nitrogen.environment.skipOnJVM
-import au.sgallitz.nitrogen.runner.NitrogenTestRunner
+import demo.app.MainActivity
 import kotlin.test.Test
 import org.junit.Rule
 import org.junit.runner.RunWith
+import tech.sarahgallitz.nitrogen.environment.skipOnDevice
+import tech.sarahgallitz.nitrogen.environment.skipOnJVM
+import tech.sarahgallitz.nitrogen.runner.NitrogenTestRunner
 
 @RunWith(NitrogenTestRunner::class)
 class ComposeExampleTest {

@@ -1,4 +1,4 @@
-package au.sgallitz.nitrogen.internal
+package tech.sarahgallitz.nitrogen.internal
 
 import org.junit.runner.Runner
 import org.junit.runners.model.InitializationError

@@ -5,7 +5,7 @@ plugins {
 
 android {
     defaultConfig {
-        namespace = "au.sgallitz.nitrogen"
+        namespace = "tech.sarahgallitz.nitrogen"
         compileSdk = 33
     }
 }

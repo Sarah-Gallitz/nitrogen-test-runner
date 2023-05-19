@@ -6,7 +6,7 @@ plugins {
     id("signing")
 }
 
-group = "au.sgallitz"
+group = "tech.sarahgallitz"
 version = "0.0.1"
 
 gradlePlugin {
@@ -15,13 +15,13 @@ gradlePlugin {
 
     plugins {
         create("nitrogenPlugin") {
-            id = "au.sgallitz.nitrogen-plugin"
+            id = "tech.sarahgallitz.nitrogen-plugin"
 
             displayName = "Nitrogen Test Runner (Android)"
             description = "A test runner for android that allows targeting JVM or Device.\n\nThis project is in alpha and not ready for use. Check back soon!"
             tags.set(listOf("nitrogen", "android", "uitest", "testing", "espresso", "androidxtest"))
 
-            implementationClass = "au.sgallitz.nitrogen.plugin.NitrogenTestPlugin"
+            implementationClass = "tech.sarahgallitz.nitrogen.plugin.NitrogenTestPlugin"
         }
     }
 }

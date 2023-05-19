@@ -1,4 +1,4 @@
-package au.sgallitz.nitrogen.environment
+package tech.sarahgallitz.nitrogen.environment
 
 import android.os.Build
 

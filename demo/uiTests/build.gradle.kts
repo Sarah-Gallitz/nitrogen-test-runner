@@ -1,11 +1,11 @@
 plugins {
-    id("au.sgallitz.nitrogen-plugin")
+    id("tech.sarahgallitz.nitrogen-plugin")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
     defaultConfig {
-        testApplicationId = "au.sgallitz.nitrogen.demo.uiTests"
+        testApplicationId = "demo.uiTests"
     }
 }
 

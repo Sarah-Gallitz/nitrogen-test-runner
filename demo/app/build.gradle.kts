@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "au.sgallitz.nitrogen.demo"
+    namespace = "demo.app"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "au.sgallitz.nitrogen.demo"
+        applicationId = "demo.app"
 
         minSdk = 21
         targetSdk = 33

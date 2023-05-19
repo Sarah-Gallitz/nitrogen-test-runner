@@ -1,4 +1,4 @@
-package au.sgallitz.nitrogen.plugin
+package tech.sarahgallitz.nitrogen.plugin
 
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.api.dsl.TestExtension

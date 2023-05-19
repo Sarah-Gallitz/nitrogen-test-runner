@@ -1,8 +1,8 @@
-package au.sgallitz.nitrogen.runner
+package tech.sarahgallitz.nitrogen.runner
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import au.sgallitz.nitrogen.environment.TestEnvironment
-import au.sgallitz.nitrogen.internal.createInstance
+import tech.sarahgallitz.nitrogen.environment.TestEnvironment
+import tech.sarahgallitz.nitrogen.internal.createInstance
 import kotlin.reflect.KClass
 import org.junit.runner.Description
 import org.junit.runner.Runner

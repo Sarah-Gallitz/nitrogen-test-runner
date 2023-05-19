@@ -1,4 +1,4 @@
-package au.sgallitz.nitrogen.demo
+package demo.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
