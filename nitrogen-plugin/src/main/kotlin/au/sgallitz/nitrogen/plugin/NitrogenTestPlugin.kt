@@ -28,12 +28,6 @@ class NitrogenTestPlugin : Plugin<Project> {
                     }
                 }
 
-                testOptions {
-                    unitTests {
-                        isIncludeAndroidResources = true
-                    }
-                }
-
                 sourceSets {
                     getByName("test") {
                         it.kotlin.srcDir("src/main/kotlin")
@@ -45,25 +39,28 @@ class NitrogenTestPlugin : Plugin<Project> {
             }
 
             // TODO: This could be better
-            project.tasks.create("copyTestManifest") {
-                val manifest = config.targetApp.file("src/main/AndroidManifest.xml").readText()
-                val testManifest = project.file("src/main/AndroidManifest.xml")
-                testManifest.createNewFile()
-                testManifest.writeText(
-                    manifest.replace(
-                        ("(?s)<application.*?>").toRegex(),
-                        "<application android:usesCleartextTraffic=\"true\">"
+            project.tasks.create("createTestManifest") {
+                it.doFirst {
+                    val manifest = config.targetApp.file("src/main/AndroidManifest.xml").readText()
+                    val testManifest = project.file("src/main/AndroidManifest.xml")
+                    testManifest.createNewFile()
+                    testManifest.writeText(
+                        manifest.replace(
+                            ("(?s)<application.*?>").toRegex(),
+                            "<application android:usesCleartextTraffic=\"true\">"
+                        )
                     )
-                )
+                }
             }
+
+            project.findProject(config.targetProjectPath)?.tasks
+                ?.filter { it.name.startsWith("process") && it.name.endsWith("Manifest") }
+                ?.forEach { it.finalizedBy("${project.path}:createTestManifest") }
 
             project.dependencies.add(
                 "implementation",
                 "org.robolectric:robolectric:4.9.2"
             )
-            project.afterEvaluate {
-                project.tasks.getByName("test").dependsOn("copyTestManifest")
-            }
         } else {
             project.plugins.apply("com.android.test")
 
