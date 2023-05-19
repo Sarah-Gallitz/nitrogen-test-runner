@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     id("kotlin")
     id("com.gradle.plugin-publish")
@@ -27,5 +29,5 @@ gradlePlugin {
 dependencies {
     implementation(gradleApi())
 
-    implementation("com.android.tools.build:gradle-api:7.4.2")
+    implementation("com.android.tools.build:gradle-api:8.0.1")
 }
