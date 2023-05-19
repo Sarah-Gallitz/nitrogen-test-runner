@@ -1,4 +1,4 @@
-package au.sgallitz.nitrogen
+package au.sgallitz.nitrogen.environment
 
 import android.os.Build
 
