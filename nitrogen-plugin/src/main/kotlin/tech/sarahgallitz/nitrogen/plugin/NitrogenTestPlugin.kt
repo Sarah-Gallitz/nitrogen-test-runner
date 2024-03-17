@@ -32,6 +32,8 @@ class NitrogenTestPlugin : Plugin<Project> {
                     getByName("test") {
                         it.kotlin.srcDir("src/main/kotlin")
                         it.java.srcDir("src/main/kotlin")
+                        it.kotlin.srcDir("src/main/java")
+                        it.java.srcDir("src/main/java")
                     }
                 }
 
@@ -47,7 +49,7 @@ class NitrogenTestPlugin : Plugin<Project> {
                     testManifest.writeText(
                         manifest.replace(
                             ("(?s)<application.*?>").toRegex(),
-                            "<application android:usesCleartextTraffic=\"true\">"
+                            "<application android:usesCleartextTraffic=\"true\" \nandroid:theme=\"@android:style/Theme.DeviceDefault.Light.NoActionBar\">"
                         )
                     )
                 }
@@ -57,9 +59,23 @@ class NitrogenTestPlugin : Plugin<Project> {
                 ?.filter { it.name.startsWith("process") && it.name.endsWith("Manifest") }
                 ?.forEach { it.finalizedBy("${project.path}:createTestManifest") }
 
+            project.plugins.apply("io.github.takahirom.roborazzi")
+
             project.dependencies.add(
                 "implementation",
-                "org.robolectric:robolectric:4.9.2"
+                "org.robolectric:robolectric:[4.10.0,5.0.0)!!4.10.3"
+            )
+            project.dependencies.add(
+                "implementation",
+                "io.github.takahirom.roborazzi:roborazzi:[1.0.0,2.0.0)!!1.10.1"
+            )
+            project.dependencies.add(
+                "implementation",
+                "io.github.takahirom.roborazzi:roborazzi-compose:[1.0.0,2.0.0)!!1.10.1"
+            )
+            project.dependencies.add(
+                "implementation",
+                "com.jraska:falcon:[2.0.0,3.0.0)!!2.2.0"
             )
         } else {
             project.plugins.apply("com.android.test")
@@ -80,6 +96,19 @@ class NitrogenTestPlugin : Plugin<Project> {
 
                 namespace = namespace ?: androidConfig.namespace
             }
+
+            project.dependencies.add(
+                "compileOnly",
+                "org.robolectric:robolectric:[4.10.0,5.0.0)!!4.10.3"
+            )
+            project.dependencies.add(
+                "compileOnly",
+                "io.github.takahirom.roborazzi:roborazzi:[1.0.0,2.0.0)!!1.10.1"
+            )
+            project.dependencies.add(
+                "compileOnly",
+                "io.github.takahirom.roborazzi:roborazzi-compose:[1.0.0,2.0.0)!!1.10.1"
+            )
         }
     }
 }

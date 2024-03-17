@@ -1,25 +1,29 @@
 plugins {
-    id("tech.sarahgallitz.nitrogen-plugin")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.nitrogen.test)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
     defaultConfig {
         testApplicationId = "demo.uiTests"
     }
+
+    buildFeatures { compose = true }
+    composeOptions { kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get() }
 }
 
 dependencies {
     implementation(project(":demo:app"))
 
     implementation(embeddedKotlin("test-junit"))
-    implementation("androidx.test:runner:1.5.2")
-    implementation("androidx.test:rules:1.5.0")
 
-    implementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(libs.androidx.test.runner)
+    implementation(libs.androidx.test.rules)
+    implementation(libs.androidx.test.espresso)
 
-    implementation(platform("androidx.compose:compose-bom:2023.05.01"))
-    implementation("androidx.compose.ui:ui-test-junit4")
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.material3)
+    implementation(libs.compose.uitest)
 
     implementation(project(":nitrogen"))
 }

@@ -7,12 +7,14 @@ import demo.app.MainActivity
 import kotlin.test.Test
 import org.junit.Rule
 import org.junit.runner.RunWith
+import org.robolectric.annotation.Config
 import tech.sarahgallitz.nitrogen.environment.skipOnDevice
 import tech.sarahgallitz.nitrogen.environment.skipOnJVM
 import tech.sarahgallitz.nitrogen.runner.NitrogenTestRunner
 
 @RunWith(NitrogenTestRunner::class)
-class ComposeExampleTest {
+@Config(sdk = [33])
+class ComposeUiTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 

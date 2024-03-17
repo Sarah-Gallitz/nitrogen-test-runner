@@ -1,8 +1,8 @@
 package tech.sarahgallitz.nitrogen.plugin
 
 import com.android.build.api.dsl.ApplicationExtension
-import org.gradle.api.Project
 import java.io.FileNotFoundException
+import org.gradle.api.Project
 
 class NitrogenTestConfiguration(private val project: Project) {
     private val config: Map<String, String>

@@ -1,3 +1,4 @@
 <resources>
+
     <style name="Theme.DemoApp" parent="android:Theme.Material.NoActionBar" />
 </resources>

@@ -1,0 +1,49 @@
+[versions]
+kotlinAndroid = "1.9.22"
+androidGradlePlugin = "8.3.0"
+
+composeBom = "2024.02.02"
+composeCompiler = "1.5.8"
+androidxActivity = "1.8.2"
+androidXTestRunner = "1.5.2"
+androidXTestRules = "1.5.0"
+androidXEspresso = "3.5.1"
+androidXTestJunit = "1.1.5"
+
+nitrogen = "0.0.3"
+gradlePublish = "1.2.0"
+
+robolectric = "4.10.3"
+roborazzi = "1.10.1"
+falcon = "2.2.0"
+
+[libraries]
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-compiler = { group = "androidx.compose", name = "compose-compiler", version.ref = "composeCompiler" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-uitooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-uitooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-uitest = { module = "androidx.compose.ui:ui-test-junit4" }
+compose-uitest-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+
+androidx-compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
+
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidXTestRunner" }
+androidx-test-rules = { group = "androidx.test", name = "rules", version.ref = "androidXTestRules" }
+androidx-test-junit = { module = "androidx.test.ext:junit-ktx", version.ref = "androidXTestJunit" }
+androidx-test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "androidXEspresso" }
+
+android-gradle-tools = { module = "com.android.tools.build:gradle-api", version.ref = "androidGradlePlugin" }
+
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+roborazzi = { module = "io.github.takahirom.roborazzi:roborazzi", version.ref = "roborazzi" }
+roborazzi-compose = { module = "io.github.takahirom.roborazzi:roborazzi-compose", version.ref = "roborazzi" }
+screenshots-falcon = { module = "com.jraska:falcon", version.ref = "falcon" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
+nitrogen-test = { id = "tech.sarahgallitz.nitrogen-plugin", version.ref = "nitrogen" }
+gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradlePublish" }
+roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }

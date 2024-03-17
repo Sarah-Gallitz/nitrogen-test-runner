@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
     id("maven-publish")
     id("signing")
 }
@@ -20,7 +20,7 @@ afterEvaluate {
                 from(components["release"])
 
                 groupId = "tech.sarahgallitz"
-                version = "0.0.1"
+                version = "0.0.3"
                 artifactId = "nitrogen"
 
                 pom {
@@ -63,6 +63,7 @@ android {
     defaultConfig {
         namespace = "tech.sarahgallitz.nitrogen"
         compileSdk = 33
+        minSdk = 21
     }
 
     publishing {
@@ -74,9 +75,17 @@ android {
 }
 
 dependencies {
-    implementation("androidx.test:runner:1.5.2")
-    implementation("androidx.test:rules:1.5.0")
-    implementation("androidx.test.ext:junit-ktx:1.1.5")
+    implementation(project(":demo:app"))
 
-    compileOnly("org.robolectric:robolectric:4.9.2")
+    implementation(libs.androidx.test.runner)
+    implementation(libs.androidx.test.rules)
+    implementation(libs.androidx.test.junit)
+
+    api(platform(libs.compose.bom))
+    implementation(libs.compose.uitest)
+
+    compileOnly(libs.robolectric)
+    compileOnly(libs.roborazzi)
+    compileOnly(libs.roborazzi.compose)
+    implementation(libs.screenshots.falcon)
 }

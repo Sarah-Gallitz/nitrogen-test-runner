@@ -1,8 +1,6 @@
 package tech.sarahgallitz.nitrogen.runner
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import tech.sarahgallitz.nitrogen.environment.TestEnvironment
-import tech.sarahgallitz.nitrogen.internal.createInstance
 import kotlin.reflect.KClass
 import org.junit.runner.Description
 import org.junit.runner.Runner
@@ -13,6 +11,8 @@ import org.junit.runner.manipulation.Sortable
 import org.junit.runner.manipulation.Sorter
 import org.junit.runner.notification.RunNotifier
 import org.robolectric.RobolectricTestRunner
+import tech.sarahgallitz.nitrogen.environment.TestEnvironment
+import tech.sarahgallitz.nitrogen.internal.createInstance
 
 open class NitrogenTestRunner(
     testClass: Class<*>
@@ -25,7 +25,7 @@ open class NitrogenTestRunner(
     }
 
     private val currentTestRunner: Runner by lazy {
-        if (TestEnvironment.isRobolectric) {
+        if (TestEnvironment.isJvm) {
             robolectricRunner.java.createInstance(testClass)
         } else {
             instrumentationRunner.java.createInstance(testClass)
