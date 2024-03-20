@@ -20,7 +20,7 @@ afterEvaluate {
                 from(components["release"])
 
                 groupId = "tech.sarahgallitz"
-                version = "0.0.3"
+                version = "0.0.4"
                 artifactId = "nitrogen"
 
                 pom {
@@ -75,8 +75,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":demo:app"))
-
     implementation(libs.androidx.test.runner)
     implementation(libs.androidx.test.rules)
     implementation(libs.androidx.test.junit)
@@ -87,5 +85,6 @@ dependencies {
     compileOnly(libs.robolectric)
     compileOnly(libs.roborazzi)
     compileOnly(libs.roborazzi.compose)
+
     implementation(libs.screenshots.falcon)
 }

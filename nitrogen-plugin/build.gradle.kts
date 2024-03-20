@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "tech.sarahgallitz"
-version = "0.0.3"
+version = "0.0.4"
 
 gradlePlugin {
     website.set("https://github.com/Sarah-Gallitz/nitrogen-test-runner")
